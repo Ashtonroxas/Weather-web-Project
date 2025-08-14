@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weatherly</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Dark Mode Toggle -->
+  <button id="themeToggleBtn" aria-label="Toggle dark mode" class="theme-toggle">🌙</button>
+
+  <!-- YouTube Background Video -->
+  <div class="video-background">
+    <iframe
+      src="https://www.youtube.com/embed/aiQdLP2mBJE?autoplay=1&mute=1&loop=1&playlist=aiQdLP2mBJE&controls=0&showinfo=0&modestbranding=1"
+      frameborder="0"
+      allow="autoplay; fullscreen"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div id="loader" class="loader" role="status" aria-live="polite">
+  <span class="sr-only">Loading weather data...</span>
+  <div class="spinner"></div>
+</div>
+
+  <!-- Dynamic Unsplash Background Image -->
+  <img
+    id="bgImage"
+    class="bg-image"
+    src="https://source.unsplash.com/1600x900/?earth"
+    alt="Background"
+  />
+
+  <main class="app-container" role="main" aria-label="Weather Application">
+    <header class="app-header">
+      <h1 class="app-title">Weatherly</h1>
+      <time id="currentDateTime" class="datetime" aria-live="polite"></time>
+    </header>
+
+    <section class="search-section" aria-label="City Search">
+      <label for="cityInput" class="visually-hidden">Enter city name</label>
+      <input type="search" id="cityInput" name="cityInput" placeholder="Enter city..." autocomplete="off" />
+      <div class="buttons-wrapper">
+        <button id="searchBtn" type="button" aria-label="Search weather">Search</button>
+        <button id="locationBtn" type="button" aria-label="Use current location">📍 Your Location</button>
+      </div>
+      <p class="helper-text">Type a city name or use your location.</p>
+    </section>
+
+    <section id="weatherDisplay" class="weather-display" aria-live="polite" hidden>
+      <h2 id="cityName" class="city-name"></h2>
+      <img id="weatherIcon" alt="" class="weather-icon" />
+      <p id="temperature" class="temperature"></p>
+      <div class="unit-toggle">
+        <button id="toggleUnitBtn">Show in °F</button>
+      </div>
+      <p id="weatherDescription" class="weather-description"></p>
+    </section>
+
+    <section id="errorMessage" class="error-message" role="alert" hidden></section>
+
+    <div id="loader" class="loader" role="status" aria-live="polite" hidden>
+      <span class="sr-only">Loading...</span>
+      <div class="spinner"></div>
+    </div>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
