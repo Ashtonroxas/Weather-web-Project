@@ -33,5 +33,3 @@ Add hourly/daily forecast with charts.
 Implement offline caching to improve performance.
 Include multi-language support for global users.
 
-License
-This project is licensed under the MIT License – see the LICENSE file for details.
